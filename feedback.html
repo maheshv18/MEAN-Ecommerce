@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+html, body{
+  font-family: Palatino Linotype, Book Antiqua, monospace;
+  background-image: url("/BACKG.png");
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+  background:#a4d19f;
+  color: black;
+  min-width: 350px;
+}
+header {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.top{
+    color: #32502E;
+    font-size: large;
+    padding-left: 6px;
+    padding-top: 10px;
+    width: 100%;
+    bottom:0;
+}
+
+#form-outer {
+  background-image:url("images/BACKKGG.png");
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 4px;
+  width: 75%;
+  max-width: 900px;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.labels {
+  display: inline-block;
+  text-align: right;
+  width: 40%;
+  padding: 5px;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+.rightTab {
+  display: inline-block;
+  text-align: left;
+  width: 48%;
+  vertical-align: middle;
+}
+
+.input-field {
+  height: 20px;
+  width: 280px;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+}
+
+#userAge {
+  width: 40px;
+}
+
+.userRatings,
+input[type="checkbox"] {
+  float: left;
+  margin-right: 5px;
+}
+input[type="radio"]{
+  float: left;
+  margin-right: 5px;
+}
+
+#submit {
+  background-color: #59ace0;
+  border-radius: 4px;
+  color: white;
+  font-size: 1em;
+  height: 40px;
+  width: 96px;
+  margin: 10px;
+  border: 0px solid;
+}
+
+.dropdown {
+  height: 35px;
+  width: 140px;
+  padding: 5px;
+  margin: 10px;  
+  margin-top: 15px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+}
+
+.radio, .checkbox {
+  position: relative;
+  left: -43px;
+  margin-left: 10px;
+  display: block;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 833px) {
+  .input-field {
+    width: 80%;
+  }
+  select {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .labels {
+    width: 100%;
+    text-align: left;
+  }
+  .rightTab {
+    width: 80%;
+    float: left;
+  }
+  .input-field {
+    width: 100%;
+  }
+  select {
+    width: 100%;
+  }
+  
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    
+    <link rel="icon" type="image/ico" href="/icon2.png">
+
+</head>
+
+<body>
+  
+<h1 id="title">"yummy Wheels"
+  <h2>Restaurant Feedback Form</h2>
+</h1>
+<div ng-app ="mainApp" ng-controller="FeedbackController"   id="form-outer">
+  <p id="description"> Let us know how can we improve</p>
+  <form id="survey-form" name = "Feedbackform" method="GET" action="#">
+    <div class="rowTab">
+      <div class="labels">
+        <label id="name-label" for="name">* Name: </label>
+      </div>
+      <div class="rightTab">
+        <input autofocus type="text" ng-model = "name" name="name" id="name" class="input-field" placeholder="Enter your name" required>
+        <span style = "color:red" ng-show = "Feedbackform.name.$dirty && Feedbackform.name.$invalid">
+            <span ng-show = "Feedbackform.name.$error.required">First Name is required.</span>
+        </span>
+    </div>
+    </div>
+    <div class="rowTab">
+      <div class="labels">
+        <label id="email-label" for="email">* Email: </label>
+      </div>
+      <div class="rightTab">
+        <input type="email" ng-model ="email" name="email" id="email" class="input-field" required placeholder="Enter your Email">
+        <span style = "color:red" ng-show = "Feedbackform.email.$dirty && Feedbackform.email.$invalid">
+            <span ng-show = "Feedbackform.email.$error.required">Email is required.</span>
+        </span>
+    </div>
+    </div>
+    <div class="rowTab">
+      <div class="labels">
+        <label id="number-label" for="age">* Age: </label>
+      </div>
+      <div class="rightTab">
+        <input type="number" ng-model = "age" name="age" id="number" min="1" max="125" class="input-field" placeholder="Age">
+    </div>
+    </div>
+    <div class="rowTab">
+      <div class="labels">
+        <label for="currentPos">Location you visited</label>
+      </div>
+      <div class="rightTab">
+        <select id="dropdown" name="currentPos" class="dropdown">
+          <option disabled value>Select an option</option>
+          <option value="CM">Delhi</option>
+          <option value="CC">Banglore</option>
+          <option value="DS">Hyderabad</option>
+          <option value="AP">Uttar Pradesh</option>
+
+        </select>
+      </div>
+    </div>
+
+    <div class="rowTab">
+      <div class="labels">
+        <label for="userRating">* DineIn/ Take Out</label>
+      </div>
+      <div class="rightTab">
+        <ul style="list-style: none;">
+          <li class="radio"><label>Dine In<input name="radio-buttons"    name="Dine" ng-change="SelectedDine('Dine In')" ng-model="Dine" value="Dine In " type="radio"></label></li>
+          <li class="radio"><label>Take Out<input name="radio-buttons"  name="Dine" ng-change="SelectedDine('Take Out')" ng-model="Dine" value="Take Out" type="radio"></label></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rightTab">
+      <div class="labels">
+        <label for="preferences">Things that should be improved in the future<br>(Check all that apply): </label>
+      </div>
+      <div class="rightTab">
+        <ul id="preferences" style="list-style: none;">
+          <li class="checkbox"><label><input name="prefer" ng-model="chkVal1" ng-false-value="'worst food'" ng-true-value="'Good food'"type="checkbox" class="userRatings">Food Quality:{{chkVal1}}</label></li>
+          <li class="checkbox"><input name="prefer" ng-model="chkVal2" ng-false-value="'No Good Service'" ng-true-value="'Good Service'" type="checkbox" class="userRatings">Services:{{chkVal2}}</li>
+          <li class="checkbox"><label><input name="prefer" ng-model="chkVal3" ng-false-value="'No Good Delivery'" ng-true-value="'Good Delivery'" type="checkbox" class="userRatings">Good Delivery:{{chkVal3}}</label></li>
+          <li class="checkbox"><label><input name="prefer" ng-model="chkVal4" ng-false-value="'Increase Items'" ng-true-value="'Good Menu'"type="checkbox" class="userRatings">Menu:{{chkVal4}}</label></li>
+          <li class="checkbox"><label><input name="prefer" ng-model="chkVal5" ng-false-value="'Bad'" ng-true-value="'Good'"type="checkbox" class="userRatings">Food taste:{{chkVal5}}</label></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rowTab">
+      <div class="labels">
+        <label for="comments">Any Comments or Suggestions?</label>
+      </div>
+      <div class="rightTab">
+        <textarea id="comments" class="input-field" style="height:50px; resize:vertical;" name="comment" placeholder="Enter your comment here..."></textarea>
+      </div>
+    </div>
+    <button ng-disabled = "Feedbackform.name.$dirty &&
+    Feedbackform.name.$invalid || Feedbackform.age.$dirty &&
+    Feedbackform.age.$invalid || Feedbackform.email.$dirty &&
+    Feedbackform.email.$invalid" ng-click="submit()" id="submit" type="submit">Submit</button>
+  </form>
+</div>
+    <footer class="top">
+        <p align="center">Order Online +919493248889</p>
+        <p>Copyright &copy; 2022 by Yummy Wheels. All rights reserved.</p>
+    </footer>
+
+
+ <script>
+         var mainApp = angular.module("mainApp", []);
+         
+         mainApp.controller('FeedbackController', function($scope) {
+
+            
+
+            $scope.RadioChange = function (s) {
+                $scope.SelectedDine = s;
+            };
+
+
+
+            $scope.reset = function() {
+               $scope.name = "Ajay";
+               $scope.age = "20";
+               $scope.email = "ajaybezawada19@gmail.com";
+            }
+            
+            $scope.reset();
+         });
+      </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eKart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    <link rel="stylesheet" type="text/css" href="Vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="Vendors/css/Grid.css">
+    <link rel="stylesheet" type="text/css" href="Vendors/css/ionicons.min.css">
+    <link rel="stylesheet" href="Vendors/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="Resources/css/style1.css">
+    <link rel="stylesheet" type="text/css" href="Resources/css/queries.css">
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    
+    <link rel="icon" type="image/ico" href="/icon2.png">
+
+    
+    <script>
+        function track(){
+            window.location.href ="track.html";
+        }
+        function toindex(){
+            window.location.href ="index.html";
+        }
+        function toSnacks() {
+            window.location.href = "electronics.html";
+        }
+        function toMainCourse() {
+            window.location.href = "dailyneeds.html";
+        }
+        function toDrinks() {
+            window.location.href = "books.html";
+        }
+        function showCart() {
+            window.location.href = "cart.html";
+        }
+        function feedback() {
+            window.location.href = "feedback.html";
+        }
+        function Aboutus() {
+            window.location.href = "index.html";
+        }
+
+    </script>
+</head>
+
+<body>
+<nav><ul>
+    <li>
+    <p class="login_head">
+        <button id="login" onclick="showCart()" style="background-color: #ecf4e3;">Show Cart/Place Order</button>
+    </p>
+    </li>
+    <li>
+        <p class="login_head">
+            <button id="login" onclick="feedback()" style="background-color: #ecf4e3;">feedback</button>
+        </p>
+    </li>
+    <li>
+        <p class="login_head">
+            <button id="login" onclick="track()" style="background-color: #ecf4e3;">Track</button>
+        </p>
+    </li>
+    <li>
+    <p class="login_head">
+        <button id="login" onclick="Aboutus()" style="background-color: #ecf4e3;">AboutUs</button>
+    </p>
+    </li>
+    <li><p class="login_head">
+        <button id="login" onclick="toindex()" style="background-color: #ecf4e3;">Orders</button>
+    </p>
+    </li>
+    <li><p class="login_head">
+        <a id="login" href="#menu" style="background-color: #ecf4e3;">Menu</a>
+    </p>
+    </li>
+    <li><p class="login_head">
+        <button id="login" onclick="toindex()" style="background-color: #ecf4e3;">Home</button>
+    </p>
+    </li>
+
+</ul>
+</nav>
+    <center>
+        <p id="heading">Yummy Wheels</p>
+    </center>
+
+
+    <h1 align="center"><span><img src="/icon2.png"></span> OUR MENU <span><img src="/icon2.png"></span></h1>
+
+
+    <div class="menu" id="menu" align="center">
+        <div id="snack_div" onClick="toSnacks()">
+            <p style="background-color: #32502E; font-family: 'Indie Flower', cursive;">Electronics</p>
+        </div>
+        <div id="main_course_div" onClick="toMainCourse()">
+            <p style="background-color: #32502E; font-family: 'Indie Flower', cursive;">Daily Needs</p>
+        </div>
+        <div id="drinks_div" onClick="toDrinks()">
+            <p style="background-color: #32502E; font-family: 'Indie Flower', cursive;">Books</p>
+        </div>
+    </div>
+
+    <br>
+    <div id="order">
+
+        <h2>Order for<br>
+            Home-Delivered Smiles<br></h2>
+        We deliver to your doorstep
+
+        Our Delivery allows you to experience delicious food from the comfort of
+        your sofa at home or cubicle in office. All orders are delivered quickly and efficiently,
+        allowing you the peace of mind to know that smiles-inducing food is never too far.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit odio, reiciendis voluptates placeat, nihil
+        explicabo aspernatur ut pariatur accusamus accusantium animi atque veritatis!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dicta harum, rem quo quis quidem animi.
+    </div>
+    <br><br>
+    
+
+
+    <div class="menu_1">
+        <img src="https://img.freepik.com/premium-photo/delicious-grilled-burgers_62847-14.jpg?w=2000" class = "img1" alt="food img1">
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb" class = "img1" alt="food img 2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqJIazjIu6JxrOYQQsk7_PV1QyMqpejCzu_g&usqp=CAU" class = "img1" alt="food img 3">
+    </div>
+    <div class="menu_1">
+        <img src="https://media.istockphoto.com/photos/restaurant-plates-picture-id104704117?k=20&m=104704117&s=612x612&w=0&h=kpYSHTcSnkQZbhHmUr25jIIvns7f3x2oBMNvX1lLTwU=" class = "img1" alt="food img1">
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb" class = "img1" alt="food img 2">
+        <img src="https://blog.dineout-cdn.co.in/blog/wp-content/uploads/2019/10/Blog-10-1030x538.jpg" class = "img1" alt="food img 3">
+    </div>
+
+    <section id="cities">
+        <div class="row">
+            <h2 align="center">We're currently in these cities</h2>
+        </div>
+        <div class="Cities">
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXkFxyuIi9D6V3eiqWFV2foxQAErFvxjAiZA&usqp=CAU" class = "img_city" alt="Delhi">
+                <h3 align="center">Delhi</h3>
+                <div align="center" class="city-feature">
+                    1600+ happy eaters
+                </div>
+                <div align="center" class="city-feature">
+                    60+ top chefs
+                </div>
+                <div align="center" class="city-feature">
+                    <a class ="tag" href="#">@Yummy Wheels_delhi</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDM3ThaJPyaUvY8rTLBFPAJI_LOovmCP0UsQ&usqp=CAU" class = "img_city" alt="Banglore">
+                <h3 align="center">Bangalore</h3>
+                <div align="center" class="city-feature">
+                    <i class="ion-ios-person icon-small"></i>
+                    3700+ happy eaters
+                </div>
+                <div align="center" class="city-feature">
+                    <i class="ion-ios-star icon-small"></i>
+                    160+ top chefs
+                </div>
+                <div align="center" class="city-feature">
+                    <i class="ion-social-twitter icon-small"></i>
+                     <a class="tag" href="#">@Yummy Wheels_blore</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1551161242-b5af797b7233?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHlkZXJhYmFkfGVufDB8fDB8fA%3D%3D&w=1000&q=80" class = "img_city" alt="Hyderabad">
+                <h3 align="center">Hyderabad</h3>
+                <div align="center" class="city-feature">
+                    <i class="ion-ios-person icon-small"></i>
+                    2300+ happy eaters
+                </div>
+                <div align="center" class="city-feature">
+                    <i class="ion-ios-star icon-small"></i>
+                    110+ top chefs
+                </div>
+                <div align="center" class="city-feature">
+                    <i class="ion-social-twitter icon-small"></i>
+                    <a class="tag" href="#">@Yummy Wheels_hyd</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://i0.wp.com/prinsli.com/wp-content/uploads/2022/01/uttar-pradesh.jpg?resize=678%2C381&ssl=1" class = "img_city" alt="Uttar Pradesh">
+                <h3 align="center">   Uttar Pradesh</h3>
+                <div align="center" class="city-feature">
+                    <i class="ion-ios-person icon-small"></i>
+                    1200+ happy eaters
+                </div>
+                <div  align="center"class="city-feature">
+                    <i class="ion-ios-star icon-small"></i>
+                    50+ top chefs
+                </div>
+                <div align="center" class="city-feature">
+                    <i class="ion-social-twitter icon-small"></i>
+                    <a class ="tag" href="#">@Yummy Wheels_up</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<br><br><br><br><br><br>
+    <footer class="top">
+        <p align="center">Order Online +919493248889</p>
+        <p>Copyright &copy; 2022 by Yummy Wheels. All rights reserved.</p>
+    </footer>
+
+
+</body>
+
+</html>

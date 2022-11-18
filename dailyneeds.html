@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essentials</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript">
+        var arrayOfItem = []
+        function showMain() {
+            var data_file = "dailyneeds.json";
+            var http_request = new XMLHttpRequest();
+            http_request.onreadystatechange = function () {
+                if (http_request.readyState == 4) {
+                    var obj = JSON.parse(http_request.responseText);
+                    for (var i = 0; i < obj.length; i++) {
+                        arrayOfItem[i] = obj[i];
+                        var div = document.createElement('div');
+                        div.className = 'box';
+                        div.innerHTML = '<img class ="food_image" style ="height:300px" src="' + obj[i].image + '">' +
+                            '<div class="inner_box>' +
+                            '<h3 class="food_name">' + obj[i].name + '</h3>' + '</p>' +
+                            '<p class="food_rating"> <br>Rating : ' + obj[i].rating + '</p>' +
+                            '<span class="food_price"> Price: ' + obj[i].price + '</span><br><br>' +
+                            '<button class="food_button" onClick=addToCart(' + i + ') >Add to cart</button>' + '</div>';
+
+                        document.getElementById('maincourse').appendChild(div);
+                    }
+                }
+            }
+            http_request.open("GET", data_file, true);
+            http_request.send();
+        }
+
+        function addToCart(idx) {
+            alert("Item added to cart")
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:9000/addtocart", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(arrayOfItem[idx]));
+            console.log(arrayOfItem[idx]);
+        }
+    
+        function track(){
+            window.location.href ="track.html";
+        }
+        function toindex(){
+            window.location.href ="index.html";
+        }
+        function toSnacks() {
+            window.location.href = "electronics.html";
+        }
+        function toMainCourse() {
+            window.location.href = "main_course.html";
+        }
+        function toDrinks() {
+            window.location.href = "books.html";
+        }
+        function showCart() {
+            window.location.href = "cart.html";
+        }
+        function feedback() {
+            window.location.href = "feedback.html";
+        }
+        function Aboutus() {
+            window.location.href = "Aboutus.html";
+        }    
+    </script>
+</head>
+
+<body onload="showMain()">
+    <nav><ul>
+        <li>
+        <p class="login_head">
+            <button id="login" onclick="showCart()" style="background-color: #ecf4e3;">Show Cart/Place Order</button>
+        </p>
+        </li>
+        <li><p class="login_head">
+            <button id="login" onclick="toindex()" style="background-color: #ecf4e3;">Login/Register</button>
+        </p></li>
+        <li><p class="login_head">
+            <button id="login" onclick="toindex()" style="background-color: #ecf4e3;">AboutUs</button>
+        </p>
+        </li>
+        <li><p class="login_head">
+            <button id="login" onclick="toindex()" style="background-color: #ecf4e3;">Orders</button>
+        </p>
+        </li>
+        <li><p class="login_head">
+            <a id="login" href="#menu" style="background-color: #ecf4e3;">Products</a>
+        </p>
+        </li>
+        <li><p class="login_head">
+            <button id="login" onclick="toindex()" style="background-color: #ecf4e3;">Home</button>
+        </p>
+        </li>
+    </ul>
+    </nav>
+    <p class="menu_heading">Daily Needs</p>
+    <div class="box-container" id="maincourse" align="center">
+    </div>
+</body>
+
+</html>
